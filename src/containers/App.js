@@ -6,6 +6,8 @@ import Reviews from '../components/Reviews'
 import restaurants from '../constants/restaurants'
 import reviews from '../constants/reviews'
 
+import ReviewFormContainer from '../containers/ReviewFormContainer'
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -52,6 +54,7 @@ class App extends Component {
           <div className="small-9 columns">
             <h2>Reviews for {this.selectedRestaurant().name}</h2>
             <Reviews data={relevantReviews} />
+            <ReviewFormContainer/>
           </div>
         </div>
       </div>
