@@ -1,24 +1,26 @@
 import React from 'react'
 
-const ReviewForm = props => {
-  return (
-    <label>{props.label}
-      <Textfield
-        label='Name'
-        name={props.name}
-      />
+class ReviewForm extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+    name: '',
+    rating: '',
+    text: ''
+  }
+}
 
-      <Textfield
-        label='Rating'
-        rating={props.rating}
-      />
+  render() {
+    return (
+      <form>
+        <input placeholder="Name" value={this.state.name} onChange={e => this.setState({ name: e.target.value})}/>
+        <input placeholder="Rating" value={this.state.rating} onChange={e => this.setState({ rating: e.target.value})}/>
+        <input placeholder="Text" value={this.state.text} onChange={e => this.setState({ text: e.target.value})}/>
+      </form>
 
-      <Textfield
-        label="Review"
-        text={props.text}
-      />
-    </label>
-  )
+    );
+  }
+
 }
 
 export default ReviewForm
